@@ -1,16 +1,17 @@
+
 <template>
-    <lightning-card title="Account Report">
+    <lightning-card title="Account List">
         <template if:true={accounts}>
             <div class="table-container">
-                <c-dynamic-custom-data-table
+                <lightning-datatable
                     key-field="Id"
                     data={accounts}
                     columns={columns}
-                    show-row-number-column>
-                </c-dynamic-custom-data-table>
+                    show-row-number-column
+                    resize-column-disabled	>
+                </lightning-datatable>
             </div>
         </template>
-
         <template if:true={error}>
             <p class="slds-text-color_error">Error loading accounts: {error}</p>
         </template>
