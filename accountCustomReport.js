@@ -1,21 +1,21 @@
 import { LightningElement, wire } from 'lwc';
-import getAccountList from '@salesforce/apex/AccountController.getAccountList';
+import getAccountList from '@salesforce/apex/AccountLWCController.getAccountList';
 import { loadStyle } from 'lightning/platformResourceLoader';
 import styles from '@salesforce/resourceUrl/cssdatatable';
 
-export default class AccountCustomReport extends LightningElement {
+export default class AccountCustomReport  extends LightningElement {
     accounts;
     error;
 
     renderedCallback() {
-    Promise.all([
-        loadStyle(this, styles)
-    ]).then(() => {
-        window.console.log('Files loaded.');
-    }).catch(error => {
-        window.console.log("Error " + error.body.message);
-    });
-}
+        Promise.all([
+            loadStyle(this, styles)
+        ]).then(() => {
+            window.console.log('Files loaded.');
+        }).catch(error => {
+            window.console.log("Error " + error.body.message);
+        });
+    }
 
     columns = [
         { label: 'Name', fieldName: 'Name' },
@@ -31,9 +31,7 @@ export default class AccountCustomReport extends LightningElement {
         { label: 'Billing Country', fieldName: 'BillingCountry' }
     ];
 
-    columns2 = [
-         { label: 'New Name', fieldName: 'Name' }
-    ]
+    
 
     @wire(getAccountList)
     wiredAccounts({ data, error }) {
