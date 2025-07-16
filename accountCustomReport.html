@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Account Report">
+        <template if:true={accounts}>
+            <div class="table-container">
+                <c-dynamic-custom-data-table
+                    key-field="Id"
+                    data={accounts}
+                    columns={columns}
+                    show-row-number-column>
+                </c-dynamic-custom-data-table>
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error">Error loading accounts: {error}</p>
+        </template>
+    </lightning-card>
+</template>
