@@ -1,0 +1,9 @@
+public with sharing class AccountLWCController {
+    @AuraEnabled(cacheable=true)
+    public static List<Account> getAccountList() {
+        return [
+            SELECT Id, Name, Industry, Phone, Type, Website, Rating, AccountNumber, AnnualRevenue, BillingCity, BillingState, BillingCountry
+            FROM Account where Industry != null
+        ];
+    }
+}
