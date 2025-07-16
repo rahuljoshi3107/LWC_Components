@@ -1,8 +1,6 @@
 import { LightningElement, wire } from 'lwc';
 import getAccountList from '@salesforce/apex/AccountController.getAccountList';
 import { loadStyle } from 'lightning/platformResourceLoader';
-// import styles from '@salesforce/resourceUrl/cusstyle';
-
 import styles from '@salesforce/resourceUrl/cssdatatable';
 
 export default class AccountCustomReport extends LightningElement {
