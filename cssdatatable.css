@@ -1,0 +1,100 @@
+/* Container scroll settings */
+.table-container {
+  height: 320px !important;
+  overflow: auto !important;
+}
+
+/* Sticky body columns */
+.table-container .slds-table tbody td:nth-child(1),
+.table-container .slds-table tbody td:nth-child(2),
+.table-container .slds-table tbody th:nth-child(3) {
+    position: sticky !important;
+    background: #f5f5f5 !important;
+}
+
+/* First body column */
+.table-container .slds-table tbody td:nth-child(1) {
+    left: 0 !important;
+    z-index: 10 !important;
+}
+
+/* Second body column */
+.table-container .slds-table tbody td:nth-child(2) {
+    left: 48px !important;
+    z-index: 9 !important;
+}
+
+/* Third header cell (inside tbody row) */
+.table-container .slds-table tbody th:nth-child(3) {
+    left: 75px !important;
+    z-index: 10 !important;
+}
+
+/* Enable vertical scroll */
+.table-container .slds-scrollable_y, 
+.table-container .slds-scrollable--y {
+    overflow: auto !important;
+}
+
+/* Disable horizontal scroll */
+.table-container .slds-scrollable_x, 
+.table-container .slds-scrollable--x {
+    overflow: hidden !important;
+}
+
+/* Auto layout */
+.table-container .slds-table {
+    table-layout: auto !important;
+}
+
+/* Remove header container padding */
+.table-container .slds-table_header-fixed_container {
+    padding: 0;
+}
+
+/* Sticky table headers */
+.table-container .slds-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 15;
+    background: #f3f3f3;
+}
+
+/* Header spacing */
+.table-container .slds-table thead th {
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Sticky header columns */
+.table-container .slds-table thead th:nth-child(1),
+.table-container .slds-table thead th:nth-child(2),
+.table-container .slds-table thead th:nth-child(3) {
+    position: sticky;
+    background: #f5f5f5;
+    z-index: 16;
+}
+
+/* Header column positions */
+.table-container .slds-table thead th:nth-child(1) {
+    left: 0;
+}
+.table-container .slds-table thead th:nth-child(2) {
+    left: 48px;
+}
+.table-container .slds-table thead th:nth-child(3) {
+    left: 75px;
+}
+
+/* Sticky  for first body column */
+.table-container .slds-table tbody td:nth-child(1) {
+    position: sticky;
+    left: 0;
+    background: #f5f5f5;
+    z-index: 10;
+}
+
+.table-container .slds-cell-fixed{
+    width: 100% !important;
+}
