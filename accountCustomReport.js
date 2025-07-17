@@ -6,14 +6,17 @@ import styles from '@salesforce/resourceUrl/cssdatatable';
 export default class AccountCustomReport  extends LightningElement {
     accounts;
     error;
-
+    isLibLoaded = false;
+    
     renderedCallback() {
-        Promise.all([
-            loadStyle(this, styles)
-        ]).then(() => {
-            window.console.log('Files loaded.');
-        }).catch(error => {
-            window.console.log("Error " + error.body.message);
+        if (this.isLibLoaded) return;
+        this.isLibLoaded = true;
+        loadStyle(this, styles)
+        .then(() => {
+            console.log('Files loaded.');
+        })
+        .catch(error => {
+            console.error('Error loading ', error);
         });
     }
 
