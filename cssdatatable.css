@@ -97,4 +97,11 @@
 
 .table-container .slds-cell-fixed{
     width: 100% !important;
+
+}
+
+
+
+.table-container .slds-scrollable_y, .table-container .slds-scrollable--y{
+    width: unset !important;
 }
